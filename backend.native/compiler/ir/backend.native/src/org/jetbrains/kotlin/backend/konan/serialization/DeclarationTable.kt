@@ -50,9 +50,10 @@ class DeclarationTable(val builtIns: IrBuiltIns, val descriptorTable: Descriptor
             UniqId(value.uniqIdIndex, false)
         }
 
-        debugIndex.putOnce(index) {
-            "${if (index.isLocal) "" else value.uniqSymbolName()} descriptor = ${value.descriptor}"
-        }
+        // It can grow as large as 1/3 of ir/* size.
+        // debugIndex.putOnce(index) {
+        //     "${if (index.isLocal) "" else value.uniqSymbolName()} descriptor = ${value.descriptor}"
+        //}
 
         index
     }
